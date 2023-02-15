@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        
+        .sidebar {
+            height: 100%;
+            width: 85px;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #E1EEDD;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            white-space: nowrap;
+        }
+        
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+            color: #0e0d0d;
+        }
+        
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        .material-icons,
+        .icon-text {
+            vertical-align: middle;
+        }
+        
+        .material-icons {
+            padding-bottom: 3px;
+        }
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 70%;
+            border-radius: 50%;
+        }
+        
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+            margin-left: 100px;
+        }
+        /* Place the navbar at the bottom of the page, and make it stick */
+        .navbar {
+  background-color: #E1EEDD;
+  overflow: hidden;
+  margin: 0%;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #818181;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+/* .navbar a.active {
+  background-color: white;
+  color: black;
+} */
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+        
+
+    </style>
+</head>
+
+<body>
+
+    <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+        <a href="#"><span><i class="material-icons">home</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Home</span></a><br>
+        <a href="#"><i class="material-icons">spa</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Temple History</a></span>
+        </a><br>
+        <a href="#"><i class="material-icons">monetization_on</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Donation</span></a><br>
+        <a href="#"><i class="material-icons">email</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;contact<span></a>
+        <a href="#"><i class="material-icons">share</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Invite link<span></a>
+        <a href="#"><i class="material-icons">info</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;about us<span></a>
+        <a href="#"><i class="material-icons">logout</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;logout<span></a>
+    </div>
+
+    <div id="main">
+        <div class="imgcontainer">
+            <img src="image/Login.png" alt="Avatar" class="avatar">
+        </div>
+        <div class="navbar">
+            <a href="#home" class="active"><i class="material-icons">account_circle</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Account<span></a>
+            <a href="#news"><i class="material-icons">church</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Temple<span></a>
+            <a href="#contact"><i class="material-icons">school</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;contact<span></a>
+          </div>
+    </div>
+
+    <script>
+        var mini = true;
+
+        function toggleSidebar() {
+            if (mini) {
+                console.log("opening sidebar");
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                this.mini = false;
+            } else {
+                console.log("closing sidebar");
+                document.getElementById("mySidebar").style.width = "85px";
+                document.getElementById("main").style.marginLeft = "85px";
+                this.mini = true;
+            }
+        }
+    </script>
+
+</body>
